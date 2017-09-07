@@ -33,7 +33,9 @@ namespace inkedin {
     })
     .state('dashboard', {
       url: '/artist/dashboard/:id',
-      templateUrl: '/views/artist/dashboard.html'
+      templateUrl: '/views/artist/dashboard.html',
+      controller: inkedin.controllers.DashboardController,
+      controllerAs: 'controller'
     })
     .state('edit', {
       url: '/artist/profile/edit/:id',

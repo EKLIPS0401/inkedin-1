@@ -1,7 +1,7 @@
 namespace inkedin.services {
 
   export class ArtistService {
-    private ARTIST_RESOURCE = this.$resource('/api/artists');
+    private ARTIST_RESOURCE = this.$resource('/api/artists/:id');
 
     static $inject = ['$resource'];
 

@@ -8,8 +8,6 @@ namespace inkedin.controllers {
 
     constructor(private artistService, private loginService, private $state, private $stateParams) {
       this.artists = this.artistService.getArtists();
-      console.log(this.artists);
-      console.log(this.artists.length);
     }
 
     public login() {
