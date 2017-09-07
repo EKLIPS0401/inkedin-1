@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!-- FILESTACK -->
+<script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
 <html lang="en" ng-app="inkedin">
 
   <head>
@@ -54,6 +56,24 @@
     <script type="text/javascript" src="/js/controllers/dashboardController.js"></script>
     <script type="text/javascript" src="/js/controllers/editController.js"></script>
     <script type="text/javascript" src="/js/controllers/galleryController.js"></script>
+<script>
+var client = filestack.init('AIqzneZh4QG2lZxmK2C4Xz');
+function showPicker() {
+    client.pick({
+          }).then(function(result) {
+            <!-- (JSON.stringify(result.filesUploaded)) -->
+            console.log ("steveiesresult",result)
+            document.getElementById("p2").innerHTML = result.filesUploaded[0].url;
+
+
+            var package = (result.filesUploaded);
+            console.log ("steveiesuploaded",package)
+            var picUrl = result.filesUploaded[0].url;
+            return picUrl;
+          });
+
+        }
+</script>
   </body>
 
 </html>

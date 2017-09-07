@@ -10,6 +10,7 @@
     "@types/opn": "^3.0.28",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "filestack-js": "^0.8.5",
     "mongoose": "^4.11.10",
     "opn": "^5.1.0"
   }
