@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "js",
+    "inlineSourceMap": true,
+    "inlineSources": true
+  },
+  "compileOnSave": true,
+  "include": [
+    "ts/**/*.ts"
+  ],
+  "exclude": [
+    "../src"
+  ]
+}

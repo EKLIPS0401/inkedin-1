@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <form ng-submit="controller.createUser()">
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="First Name" ng-model="controller.artist.firstName">
+        </div>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="Last Name" ng-model="controller.artist.lastName">
+        </div>
+        <div class="col-sm-12">
+          <input type="email" class="form-control" placeholder="Email" ng-model="controller.artist.email">
+        </div>
+        <div class="col-sm-12">
+          <input type="text" class="form-control" placeholder="Username" ng-model="controller.artist.username">
+        </div>
+        <div class="col-sm-6">
+          <input type="password" class="form-control" placeholder="Password" ng-model="controller.artist.password">
+        </div>
+        <div class="col-sm-6">
+          <input type="password" class="form-control" placeholder="Verify Password" ng-model="controller.artist.verifyPassword">
+        </div>
+        <div class="col-sm-12">
+          <button class="btn btn-success">Create <i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+{
+  "name": "inkedin",
+  "scripts": {
+    "start": "node dist/app.js"
+  },
+  "dependencies": {
+    "@types/body-parser": "^1.16.5",
+    "@types/express": "^4.0.37",
+    "@types/mongoose": "^4.7.21",
+    "@types/opn": "^3.0.28",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.10",
+    "opn": "^5.1.0"
+  }
+}
