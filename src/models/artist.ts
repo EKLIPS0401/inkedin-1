@@ -8,6 +8,7 @@ export interface Artist extends mongoose.Document {
   profilePic: string;
   username: string;
   password: string;
+  allowContact: boolean;
   address: object;
   styles: string[];
   portfolio: object[];
@@ -32,7 +33,7 @@ let artistSchema = new mongoose.Schema({
   },
   profilePic: {
     type: String,
-    default: 'http://hackpravj.com/images/avatar.png',
+    default: 'https://d30y9cdsu7xlg0.cloudfront.net/png/175172-200.png',
     required: false
   },
   username: {
@@ -42,6 +43,11 @@ let artistSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  allowContact: {
+    type: Boolean,
+    default: false,
+    required: false
   },
   address: {
     type: Object,

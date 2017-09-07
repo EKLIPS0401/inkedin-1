@@ -14,6 +14,12 @@ namespace inkedin.controllers {
       this.$state.go('dashboard', { id: this.$stateParams['id'] });
     }
 
+    public updateProfile() {
+      this.artistService.updateArtist(this.$stateParams['id'], this.artist).then(() => {
+        this.$state.go('dashboard', { id: this.$stateParams['id'] });
+      });
+    }
+
     public deleteProfile() {
       this.artistService.removeArtist(this.$stateParams['id']);
       this.$state.go('home');

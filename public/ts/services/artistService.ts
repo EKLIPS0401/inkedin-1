@@ -1,7 +1,9 @@
 namespace inkedin.services {
 
   export class ArtistService {
-    private ARTIST_RESOURCE = this.$resource('/api/artists/:id');
+    private ARTIST_RESOURCE = this.$resource('/api/artists/:id', null, {
+      'update': { method: 'PUT' }
+    });
 
     static $inject = ['$resource'];
 
@@ -17,6 +19,10 @@ namespace inkedin.services {
 
     public saveArtist(newArtist) {
       return this.ARTIST_RESOURCE.save(newArtist).$promise;
+    }
+
+    public updateArtist(artistId, newArtist) {
+      return this.ARTIST_RESOURCE.update({ id: artistId }, newArtist).$promise;
     }
 
     public removeArtist(artistId) {

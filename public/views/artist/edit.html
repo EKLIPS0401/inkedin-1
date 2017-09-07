@@ -3,11 +3,11 @@
 
     <div class="col-md-9">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <img ng-src="{{ controller.artist.profilePic }}" alt="{{ controller.artist.username }}" style="width: 100%; height: auto">
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-10">
           <h2>Edit Profile</h2>
           <h4>Member Since: {{ controller.artist.dateCreated | date: 'MMM d, yyyy' }}</h4>
           <button type="button" class="btn btn-primary" ng-click="controller.viewDashboard()">View Dashboard <i class="fa fa-eye" aria-hidden="true"></i></button>
@@ -15,6 +15,10 @@
       </div>
 
       <div class="row">
+        <div class="col-md-12">
+          <label>Profile Picture</label>
+          <input type="text" class="form-control" ng-model="controller.artist.profilePic">
+        </div>
         <div class="col-md-6">
           <label>First Name</label>
           <input type="text" class="form-control" ng-model="controller.artist.firstName">

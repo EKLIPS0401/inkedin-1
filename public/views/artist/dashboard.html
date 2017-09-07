@@ -4,8 +4,19 @@
     <div class="col-md-3">
       <h4>Your Styles</h4>
       <ul>
-        <li ng-repeat="style in controller.artist.styles">{{ style }}</li>
+        <li ng-repeat="style in controller.artist.styles track by $index">
+          <div class="row">
+            <div class="col-md-9">
+              {{ style }}
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-default" ng-click="controller.removeStyle($index)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </li>
       </ul>
+      <input type="text" class="form-control" placeholder="New Style" ng-model="controller.newStyle">
+      <button type="button" class="btn btn-success" name="button" ng-click="controller.addStyle()">Add Style <i class="fa fa-plus" aria-hidden="true"></i></button>
     </div>
 
     <div class="col-md-9">
