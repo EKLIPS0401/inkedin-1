@@ -29,6 +29,9 @@
           <h2>Welcome, {{ controller.artist.firstName }} {{ controller.artist.lastName }}</h2>
           <h4>Member Since: {{ controller.artist.dateCreated | date: 'MMM d yyyy' }}</h4>
 
+          <p ng-if="controller.artist.allowContact">Your contact information is displayed publicly.</p>
+          <p ng-if="!controller.artist.allowContact">Your contact information is NOT currently displayed.</p>
+
           <button type="button" class="btn btn-warning" ng-click="controller.editProfile()">Edit Profile <i class="fa fa-pencil" aria-hidden="true"></i></button>
         </div>
       </div>
