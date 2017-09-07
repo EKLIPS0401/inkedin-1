@@ -9,6 +9,15 @@ namespace inkedin.controllers {
       let artistId = this.$stateParams['id'];
       this.artist = this.artistService.getArtistById(artistId);
     }
+
+    public viewDashboard() {
+      this.$state.go('dashboard', { id: this.$stateParams['id'] });
+    }
+
+    public deleteProfile() {
+      this.artistService.removeArtist(this.$stateParams['id']);
+      this.$state.go('home');
+    }
   }
 
 }

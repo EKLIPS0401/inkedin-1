@@ -20,10 +20,10 @@ namespace inkedin.controllers {
               this.$state.go('dashboard', { id: this.artists[i]._id });
             }
             break;
-          } else {
-            alert('Invalid username or password.');
           }
         }
+      } else {
+        alert('Invalid username and / or password.');
       }
     }
   }

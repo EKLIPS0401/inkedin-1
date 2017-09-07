@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
   newArtist.email = req.body.email;
   newArtist.username = req.body.username;
   newArtist.password = req.body.password;
-  newArtist.address = req.body.address;
+  newArtist.address = {};
   newArtist.styles = [];
   newArtist.portfolio = [];
 

@@ -3,17 +3,20 @@
 
     <div class="col-md-3">
       <h4>Your Styles</h4>
+      <ul>
+        <li ng-repeat="style in controller.artist.styles">{{ style }}</li>
+      </ul>
     </div>
 
     <div class="col-md-9">
       <div class="row">
         <div class="col-md-3">
-
+          <img ng-src="{{ controller.artist.profilePic }}" alt="{{ controller.artist.username }}" style="width: 100%; height: auto">
         </div>
 
         <div class="col-md-9">
           <h2>Welcome, {{ controller.artist.firstName }} {{ controller.artist.lastName }}</h2>
-          <h4>Member Since: {{ controller.artist.dateCreated | date: 'MMM dd yyyy' }}</h4>
+          <h4>Member Since: {{ controller.artist.dateCreated | date: 'MMM d yyyy' }}</h4>
 
           <button type="button" class="btn btn-warning" ng-click="controller.editProfile()">Edit Profile <i class="fa fa-pencil" aria-hidden="true"></i></button>
         </div>
