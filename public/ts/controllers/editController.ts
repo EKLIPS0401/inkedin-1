@@ -1,6 +1,6 @@
 namespace inkedin.controllers {
 
-  export class DashboardController {
+  export class EditController {
     public artist;
 
     static $inject = ['artistService', 'loginService', '$state', '$stateParams'];
@@ -8,10 +8,6 @@ namespace inkedin.controllers {
     constructor(private artistService, private loginService, private $state, private $stateParams) {
       let artistId = this.$stateParams['id'];
       this.artist = this.artistService.getArtistById(artistId);
-    }
-
-    public editProfile() {
-      this.$state.go('edit', { id: this.$stateParams['id'] });
     }
   }
 
