@@ -29,15 +29,37 @@
           <h2>Welcome, {{ controller.artist.firstName }} {{ controller.artist.lastName }}</h2>
           <h4>Member Since: {{ controller.artist.dateCreated | date: 'MMM d yyyy' }}</h4>
 
-          <p ng-if="controller.artist.allowContact">Your contact information is displayed publicly.</p>
-          <p ng-if="!controller.artist.allowContact">Your contact information is NOT currently displayed.</p>
-
           <button type="button" class="btn btn-warning" ng-click="controller.editProfile()">Edit Profile <i class="fa fa-pencil" aria-hidden="true"></i></button>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row" ng-if="controller.artist.allowContact">
+        <div class="col-md-6">
+          <h4>Contact Email</h4>
+          <p>{{ controller.artist.email }}</p>
+        </div>
 
+        <div class="col-md-6">
+          <h4>Phone Number</h4>
+          <p>{{ controller.artist.address.phoneNumber }}</p>
+        </div>
+      </div>
+
+      <div class="row" ng-if="controller.artist.allowContact">
+        <div class="col-md-12">
+          <h4>Business Address</h4>
+          <p>{{ controller.artist.address.street }}<br>{{ controller.artist.address.state | uppercase }} {{ controller.artist.address.zip }}</p>
+
+          <p ng-if="controller.artist.allowContact"><span style="color: red">*</span> <small>Your contact information is displayed publicly.</small></p>
+          <p ng-if="!controller.artist.allowContact"><span style="color: red">*</span> <small>Your contact information is NOT currently displayed.</small></p>
+
+          <form ng-submit="{{ controller.artist.email }}" method="POST" style="max-width: 400px">
+            <input type="text" class="form-control" name="name" placeholder="Full Name">
+            <input type="email" class="form-control" name="_replyto" placeholder="Email">
+            <textarea name="message" class="form-control" placeholder="Message" style="resize: none; height: 150px"></textarea>
+            <input type="submit" class="btn btn-info" value="Send">
+        </form>
+        </div>
       </div>
     </div>
 

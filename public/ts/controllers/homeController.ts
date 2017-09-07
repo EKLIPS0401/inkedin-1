@@ -12,6 +12,10 @@ namespace inkedin.controllers {
     public goLogin() {
       this.$state.go('login');
     }
+
+    public displayGallery() {
+      this.$state.go('gallery');
+    }
   }
 
 }

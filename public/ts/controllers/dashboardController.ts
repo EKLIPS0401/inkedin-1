@@ -3,12 +3,14 @@ namespace inkedin.controllers {
   export class DashboardController {
     public artist;
     public newStyle;
+    public fsEmail;
 
     static $inject = ['artistService', 'loginService', '$state', '$stateParams'];
 
     constructor(private artistService, private loginService, private $state, private $stateParams) {
       let artistId = this.$stateParams['id'];
       this.artist = this.artistService.getArtistById(artistId);
+      this.fsEmail = this.artist.email;
     }
 
     public editProfile() {
